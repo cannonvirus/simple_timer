@@ -44,11 +44,12 @@ int main(int, char**) {
     cout << timer.GetMs() << " MS" << endl;
 
     timer.Clear();
-    
+
     timer.Start();
 
     for (int i = 1; i < 1000000; ++i) {
-        total += i;
+        if (i % 10000 == 0)
+            cout << i << endl;
     }
     cout << timer.GetMs() << " MS" << endl;
 }
